@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="selectedBackgroundColor">#6D8DEF</color>
+    <color name="normalBackgroundColor">#FCFCFC</color>    
+    <color name="normalTopBarBackgroundColor">#6982A1</color>    
+</resources>

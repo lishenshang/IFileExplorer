@@ -1,0 +1,168 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/id_mainTopBar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/normalTopBarBackgroundColor"
+        android:layout_alignParentTop="true" >
+
+        <ImageView
+            android:id="@+id/id_mainTopBarImageView"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/app_icon"
+            android:layout_alignParentLeft="true" />
+
+        <FrameLayout
+            android:id="@+id/id_mainTopBarFrameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"            
+            android:layout_toRightOf="@id/id_mainTopBarImageView" >
+
+            <TextView
+                android:id="@+id/id_mainTopBarTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical" />
+
+            <ProgressBar
+                android:id="@+id/id_mainTopBarProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:visibility="gone" />
+        </FrameLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/id_mainBottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/normalBackgroundColor"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:id="@+id/id_mainBottomBar1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:background="@color/normalBackgroundColor"
+            android:orientation="horizontal" >
+
+            <ImageButton
+                android:id="@+id/id_mainBottomBarCopyImageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_menu_copy_light"                
+                android:background="@drawable/btn_background"
+                android:visibility="invisible" />
+
+            <ImageButton
+                android:id="@+id/id_mainBottomBarCutImageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_menu_cut_light"
+                android:background="@drawable/btn_background"
+                android:visibility="invisible" />
+
+            <ImageButton
+                android:id="@+id/id_mainBottomBarDeleteImageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_menu_delete_light"
+                android:background="@drawable/btn_background"
+                android:visibility="invisible" />
+
+            <ImageButton
+                android:id="@+id/id_mainBottomBarMoreImageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_background"
+                android:src="@drawable/img_playcontrolbar_menu_pressed" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/id_mainBottomBar2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:background="@color/normalBackgroundColor"
+            android:visibility="gone" >
+
+            <Button
+                android:id="@+id/id_mainBottomBarPasteButton"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_background"
+                android:text="粘贴" />
+
+            <Button
+                android:id="@+id/id_mainBottomBarCancelButton"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_background"
+                android:text="取消" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TabHost
+        android:id="@+id/id_mainTabHost"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/id_mainBottomBar"
+        android:layout_below="@id/id_mainTopBar" >
+
+        <TabWidget
+            android:id="@android:id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#55ff0000" >
+        </TabWidget>
+
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="50dp" >
+
+            <LinearLayout
+                android:id="@+id/id_mainStore"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <ListView
+                    android:id="@+id/id_mainListView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/id_mainCategoryBrowser"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical" >
+
+                <ListView
+                    android:id="@+id/id_mainCategoryBrowserListView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+                
+            </LinearLayout>
+        </FrameLayout>
+    </TabHost>
+
+</RelativeLayout>
